@@ -977,3 +977,303 @@ export const tables3DData = [
   { id: 10, name: "M10", status: "free", capacity: 2, client: null, bill: null, x: 0.0, z: 1.8 },
   { id: 11, name: "M11", status: "free", capacity: 4, client: null, bill: null, x: 1.5, z: 1.8 }
 ];
+
+// ==========================================
+// MÓDULO DE PRODUTOS, CATEGORIAS E ESTOQUE
+// ==========================================
+
+export const initialCategories = [
+  { id: "cat-1", name: "Pizzas Tradicionais", description: "Pizzas clássicas napolitanas e tradicionais", status: "Ativo", color: "emerald", productCount: 4 },
+  { id: "cat-2", name: "Pizzas Especiais", description: "Receitas autorais e queijos nobres", status: "Ativo", color: "blue", productCount: 3 },
+  { id: "cat-3", name: "Pizzas Doces", description: "Sobremesas de massa fina crocante", status: "Ativo", color: "amber", productCount: 2 },
+  { id: "cat-4", name: "Bebidas & Vinhos", description: "Vinhos italianos, cervejas artesanais e refrigerantes", status: "Ativo", color: "purple", productCount: 3 },
+  { id: "cat-5", name: "Entradas & Antepastos", description: "Bruschettas, focaccias e burratas artesanais", status: "Ativo", color: "rose", productCount: 2 },
+  { id: "cat-6", name: "Insumos & Matéria-Prima", description: "Farinhas, queijos, molhos e embalagens", status: "Ativo", color: "slate", productCount: 5 }
+];
+
+export const initialProducts = [
+  {
+    id: "prod-1",
+    name: "Pizza Margherita Especial",
+    category: "Pizzas Especiais",
+    description: "Molho de tomate San Marzano D.O.P., mussarela de búfala fresca, manjericão gigante e azeite extravirgem.",
+    price: 74.00,
+    cost: 23.50,
+    stock: 45,
+    minStock: 20,
+    unit: "un",
+    status: "Ativo",
+    image: "🍕",
+    lastMovement: "Hoje, 18:20"
+  },
+  {
+    id: "prod-2",
+    name: "Pizza Quatro Queijos Suprema",
+    category: "Pizzas Tradicionais",
+    description: "Mussarela especial, gorgonzola doce, catupiry original e provolone curado.",
+    price: 79.00,
+    cost: 26.00,
+    stock: 32,
+    minStock: 15,
+    unit: "un",
+    status: "Ativo",
+    image: "🧀",
+    lastMovement: "Hoje, 17:40"
+  },
+  {
+    id: "prod-3",
+    name: "Pizza Pepperoni Supreme",
+    category: "Pizzas Tradicionais",
+    description: "Fatias generosas de pepperoni artesanal levemente picante, cebola roxa e orégano fresco.",
+    price: 78.00,
+    cost: 24.80,
+    stock: 28,
+    minStock: 15,
+    unit: "un",
+    status: "Ativo",
+    image: "🍕",
+    lastMovement: "Hoje, 17:15"
+  },
+  {
+    id: "prod-4",
+    name: "Pizza Calabresa Artesanal",
+    category: "Pizzas Tradicionais",
+    description: "Linguiça calabresa defumada artesanal, cebola em rodelas e azeitonas pretas chilenas.",
+    price: 68.00,
+    cost: 19.50,
+    stock: 12,
+    minStock: 15,
+    unit: "un",
+    status: "Ativo",
+    image: "🍕",
+    lastMovement: "Hoje, 16:50"
+  },
+  {
+    id: "prod-5",
+    name: "Pizza Nutella com Morangos",
+    category: "Pizzas Doces",
+    description: "Pura Nutella italiana com morangos frescos selecionados e raspas de chocolate branco.",
+    price: 64.00,
+    cost: 22.00,
+    stock: 18,
+    minStock: 10,
+    unit: "un",
+    status: "Ativo",
+    image: "🍫",
+    lastMovement: "Hoje, 15:30"
+  },
+  {
+    id: "prod-6",
+    name: "Burrata al Pesto Genovês",
+    category: "Entradas & Antepastos",
+    description: "Burrata de búfala cremosa, tomates confitados, pesto de manjericão genovês e focaccia da casa.",
+    price: 54.00,
+    cost: 18.20,
+    stock: 6,
+    minStock: 8,
+    unit: "un",
+    status: "Ativo",
+    image: "🥗",
+    lastMovement: "Ontem, 22:15"
+  },
+  {
+    id: "prod-7",
+    name: "Vinho Chianti Ruffino DOCG 750ml",
+    category: "Bebidas & Vinhos",
+    description: "Vinho tinto italiano elegante da região da Toscana, safra selecionada.",
+    price: 135.00,
+    cost: 68.00,
+    stock: 14,
+    minStock: 6,
+    unit: "gf",
+    status: "Ativo",
+    image: "🍷",
+    lastMovement: "Ontem, 19:00"
+  },
+  {
+    id: "prod-8",
+    name: "Cerveja Stella Artois 330ml",
+    category: "Bebidas & Vinhos",
+    description: "Premium American Lager puro malte, garrafa long neck gelada.",
+    price: 14.00,
+    cost: 5.20,
+    stock: 64,
+    minStock: 24,
+    unit: "un",
+    status: "Ativo",
+    image: "🍺",
+    lastMovement: "Ontem, 11:20"
+  },
+  {
+    id: "prod-9",
+    name: "Coca-Cola 2 Litros",
+    category: "Bebidas & Vinhos",
+    description: "Refrigerante garrafa PET 2L gelada para delivery e salão.",
+    price: 16.00,
+    cost: 7.10,
+    stock: 3,
+    minStock: 12,
+    unit: "un",
+    status: "Ativo",
+    image: "🥤",
+    lastMovement: "Hoje, 14:00"
+  },
+  {
+    id: "prod-10",
+    name: "Queijo Mussarela Fior di Latte",
+    category: "Insumos & Matéria-Prima",
+    description: "Queijo mussarela fresco especial para cobertura de pizzas de forno a lenha.",
+    price: 0.00,
+    cost: 38.50,
+    stock: 4.2,
+    minStock: 15,
+    unit: "kg",
+    status: "Ativo",
+    image: "🧀",
+    lastMovement: "Hoje, 17:45"
+  },
+  {
+    id: "prod-11",
+    name: "Farinha Italiana 00 Caputo",
+    category: "Insumos & Matéria-Prima",
+    description: "Farinha de trigo tipo 00 importada para fermentação lenta 48h.",
+    price: 0.00,
+    cost: 165.00,
+    stock: 2,
+    minStock: 6,
+    unit: "saco 25kg",
+    status: "Ativo",
+    image: "🌾",
+    lastMovement: "Hoje, 15:10"
+  },
+  {
+    id: "prod-12",
+    name: "Tomate Pelado San Marzano D.O.P.",
+    category: "Insumos & Matéria-Prima",
+    description: "Tomates italianos pelados inteiros em suco natural da Campania.",
+    price: 0.00,
+    cost: 14.20,
+    stock: 0,
+    minStock: 24,
+    unit: "lata 2.5kg",
+    status: "Ativo",
+    image: "🍅",
+    lastMovement: "Hoje, 16:30"
+  },
+  {
+    id: "prod-13",
+    name: "Azeite Extravirgem Italiano 5L",
+    category: "Insumos & Matéria-Prima",
+    description: "Azeite extravirgem acidez máxima 0.2% importado para finalização.",
+    price: 0.00,
+    cost: 210.00,
+    stock: 1,
+    minStock: 3,
+    unit: "galão 5L",
+    status: "Ativo",
+    image: "🫒",
+    lastMovement: "Ontem, 09:30"
+  },
+  {
+    id: "prod-14",
+    name: "Caixa de Pizza Oitavada G 35cm",
+    category: "Insumos & Matéria-Prima",
+    description: "Embalagem térmica oitavada com orifício de respiro para delivery crocante.",
+    price: 0.00,
+    cost: 2.15,
+    stock: 85,
+    minStock: 150,
+    unit: "un",
+    status: "Ativo",
+    image: "📦",
+    lastMovement: "Anteontem, 16:00"
+  },
+  {
+    id: "prod-15",
+    name: "Torta Tiramisù Tradicional",
+    category: "Pizzas Doces",
+    description: "Receita clássica com mascarpone, café espresso e biscoito champanhe.",
+    price: 32.00,
+    cost: 11.00,
+    stock: 0,
+    minStock: 6,
+    unit: "fatia",
+    status: "Inativo",
+    image: "🍰",
+    lastMovement: "3 dias atrás"
+  }
+];
+
+export const initialStockMovements = [
+  {
+    id: "mov-1",
+    date: "Hoje, 17:45",
+    productId: "prod-10",
+    productName: "Queijo Mussarela Fior di Latte",
+    type: "Entrada",
+    quantity: "+20 kg",
+    user: "Carlos Silva",
+    note: "Nota fiscal #88392 - Laticínios Serra"
+  },
+  {
+    id: "mov-2",
+    date: "Hoje, 16:30",
+    productId: "prod-12",
+    productName: "Tomate Pelado San Marzano D.O.P.",
+    type: "Saída",
+    quantity: "-6 latas",
+    user: "Chef Giovanni",
+    note: "Produção do molho base para o turno da noite"
+  },
+  {
+    id: "mov-3",
+    date: "Hoje, 15:10",
+    productId: "prod-11",
+    productName: "Farinha Italiana 00 Caputo",
+    type: "Saída",
+    quantity: "-2 sacos",
+    user: "Matteo Pizzaiolo",
+    note: "Massa fermentação 48h (300 massas)"
+  },
+  {
+    id: "mov-4",
+    date: "Hoje, 14:00",
+    productId: "prod-9",
+    productName: "Coca-Cola 2 Litros",
+    type: "Ajuste",
+    quantity: "-4 un",
+    user: "Carlos Silva",
+    note: "Contagem física semanal no almoxarifado"
+  },
+  {
+    id: "mov-5",
+    date: "Ontem, 22:15",
+    productId: "prod-6",
+    productName: "Burrata al Pesto Genovês",
+    type: "Perda",
+    quantity: "-2 un",
+    user: "Chef Giovanni",
+    note: "Embalagem perfurada pelo fornecedor no transporte"
+  },
+  {
+    id: "mov-6",
+    date: "Ontem, 11:20",
+    productId: "prod-8",
+    productName: "Cerveja Stella Artois 330ml",
+    type: "Entrada",
+    quantity: "+48 un",
+    user: "Carlos Silva",
+    note: "Recebimento Ambev pedido #44019"
+  },
+  {
+    id: "mov-7",
+    date: "Ontem, 09:30",
+    productId: "prod-13",
+    productName: "Azeite Extravirgem Italiano 5L",
+    type: "Ajuste",
+    quantity: "+1 galão",
+    user: "Carlos Silva",
+    note: "Correção de inventário inicial"
+  }
+];
+

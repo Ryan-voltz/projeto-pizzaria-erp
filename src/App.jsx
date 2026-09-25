@@ -6,6 +6,9 @@ import ReservationsPage from './pages/ReservationsPage';
 import TablesPage from './pages/TablesPage';
 import DeliveriesPage from './pages/DeliveriesPage';
 import CouriersPage from './pages/CouriersPage';
+import ProductsPage from './pages/ProductsPage';
+import InventoryPage from './pages/InventoryPage';
+import ShoppingListPage from './pages/ShoppingListPage';
 import ModuleView from './pages/ModuleView';
 import PrintOrderModal from './components/dashboard/PrintOrderModal';
 import { initialOrders, initialAlerts } from './data/mockData';
@@ -37,6 +40,12 @@ export default function App() {
         <DeliveriesPage />
       ) : activeNav === 'entregadores' ? (
         <CouriersPage />
+      ) : activeNav === 'produtos' ? (
+        <ProductsPage />
+      ) : activeNav === 'estoque' ? (
+        <InventoryPage onNavigateToShoppingList={() => setActiveNav('compras')} />
+      ) : activeNav === 'compras' ? (
+        <ShoppingListPage onNavigateToInventory={() => setActiveNav('estoque')} />
       ) : (
         <ModuleView
           moduleId={activeNav}
