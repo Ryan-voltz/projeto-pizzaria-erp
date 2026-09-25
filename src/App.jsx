@@ -11,6 +11,9 @@ import InventoryPage from './pages/InventoryPage';
 import ShoppingListPage from './pages/ShoppingListPage';
 import FinancialPage from './pages/FinancialPage';
 import ReportsPage from './pages/ReportsPage';
+import CustomersPage from './pages/CustomersPage';
+import WhatsAppIAPage from './pages/WhatsAppIAPage';
+import SettingsPage from './pages/SettingsPage';
 import ModuleView from './pages/ModuleView';
 import PrintOrderModal from './components/dashboard/PrintOrderModal';
 import { initialOrders, initialAlerts } from './data/mockData';
@@ -48,10 +51,16 @@ export default function App() {
         <InventoryPage onNavigateToShoppingList={() => setActiveNav('compras')} />
       ) : activeNav === 'compras' ? (
         <ShoppingListPage onNavigateToInventory={() => setActiveNav('estoque')} />
+      ) : activeNav === 'clientes' ? (
+        <CustomersPage />
+      ) : activeNav === 'whatsapp_ia' ? (
+        <WhatsAppIAPage />
       ) : activeNav === 'financeiro' ? (
         <FinancialPage />
       ) : activeNav === 'relatorios' ? (
         <ReportsPage />
+      ) : activeNav === 'configuracoes' ? (
+        <SettingsPage />
       ) : (
         <ModuleView
           moduleId={activeNav}

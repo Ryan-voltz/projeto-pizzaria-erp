@@ -1508,3 +1508,356 @@ export const topSellingProducts = [
   { rank: 6, name: "Coca-Cola 2 Litros", category: "Bebidas & Vinhos", qty: 132, revenue: 2112.00, margin: "56%" }
 ];
 
+// ==========================================
+// MÓDULO CLIENTES (CRM)
+// ==========================================
+
+export const initialCustomers = [
+  {
+    id: "cust-1",
+    name: "Carlos Eduardo Mendes",
+    phone: "(11) 98142-9901",
+    email: "carlos.mendes@email.com",
+    address: "Rua Mourato Coelho, 940 - Pinheiros, SP",
+    cpf: "349.882.108-44",
+    registeredAt: "12/03/2025",
+    totalSpent: 1248.50,
+    ordersCount: 14,
+    lastOrder: "Hoje, 20:52",
+    lastReservation: "18/09/2026 - Mesa 04 (4 pessoas)",
+    notes: "Prefere borda vulcânica de Catupiry. Não consome cebola.",
+    tier: "VIP",
+    ordersHistory: [
+      { id: "#1049", date: "Hoje, 20:52", items: "1x Pizza Quatro Queijos (G), 1x Guaraná 2L", value: 94.00, status: "Confirmado" },
+      { id: "#1032", date: "19/09/2026", items: "2x Pizza Margherita (G), 1x Coca-Cola 2L", value: 164.00, status: "Entregue" },
+      { id: "#1015", date: "12/09/2026", items: "1x Pizza Pepperoni (G)", value: 78.00, status: "Entregue" }
+    ],
+    reservationsHistory: [
+      { id: "res-101", date: "18/09/2026", time: "20:00", table: "Mesa 04", people: 4, status: "Finalizada" },
+      { id: "res-088", date: "22/08/2026", time: "19:30", table: "Mesa 06", people: 2, status: "Finalizada" }
+    ]
+  },
+  {
+    id: "cust-2",
+    name: "Mariana Souza Ribeiro",
+    phone: "(11) 98452-1920",
+    email: "mari.souza@gmail.com",
+    address: "Rua das Palmeiras, 142 - Apto 32 - Santa Cecília, SP",
+    cpf: "219.043.918-12",
+    registeredAt: "05/01/2025",
+    totalSpent: 980.00,
+    ordersCount: 11,
+    lastOrder: "Hoje, 20:41",
+    lastReservation: "25/09/2026 - Mesa 06 (2 pessoas)",
+    notes: "Adora vinho Chianti e orégano fresco.",
+    tier: "VIP",
+    ordersHistory: [
+      { id: "#1048", date: "Hoje, 20:41", items: "1x Pizza Margherita (G), 1x Coca-Cola 2L", value: 94.00, status: "Em preparo" },
+      { id: "#1029", date: "16/09/2026", items: "1x Burrata al Pesto, 1x Vinho Chianti", value: 189.00, status: "Entregue" }
+    ],
+    reservationsHistory: [
+      { id: "res-102", date: "25/09/2026", time: "21:00", table: "Mesa 06", people: 2, status: "Confirmada" }
+    ]
+  },
+  {
+    id: "cust-3",
+    name: "Roberto Guimarães",
+    phone: "(11) 97312-8809",
+    email: "roberto.guimaraes@empresa.com",
+    address: "Rua Augusta, 850 - Consolação, SP",
+    cpf: "189.332.091-88",
+    registeredAt: "20/04/2025",
+    totalSpent: 620.00,
+    ordersCount: 7,
+    lastOrder: "Hoje, 20:22",
+    lastReservation: "-",
+    notes: "Sempre pede entrega expressa. Pagamento em dinheiro.",
+    tier: "Frequente",
+    ordersHistory: [
+      { id: "#1046", date: "Hoje, 20:22", items: "1x Pizza Pepperoni (G), 1x Guaraná 2L", value: 78.00, status: "Saiu para entrega" },
+      { id: "#1004", date: "08/09/2026", items: "1x Pizza Calabresa (G)", value: 68.00, status: "Entregue" }
+    ],
+    reservationsHistory: []
+  },
+  {
+    id: "cust-4",
+    name: "Beatriz Oliveira",
+    phone: "(11) 99120-4491",
+    email: "beatriz.oliveira@uol.com.br",
+    address: "Rua dos Pinheiros, 610 - Pinheiros, SP",
+    cpf: "410.998.223-01",
+    registeredAt: "10/02/2024",
+    totalSpent: 1890.00,
+    ordersCount: 19,
+    lastOrder: "Hoje, 19:30",
+    lastReservation: "Hoje, 20:00 - Mesa 08 (6 pessoas)",
+    notes: "Membro do clube de vinhos. Costuma reservar para comemorações.",
+    tier: "VIP",
+    ordersHistory: [
+      { id: "#1044", date: "Hoje, 19:30", items: "Consumo Salão Mesa 08", value: 210.00, status: "Confirmado" }
+    ],
+    reservationsHistory: [
+      { id: "res-004", date: "Hoje", time: "20:00", table: "Mesa 08", people: 6, status: "Em andamento" }
+    ]
+  },
+  {
+    id: "cust-5",
+    name: "André Ramos",
+    phone: "(11) 98841-2200",
+    email: "andre.ramos@advocacia.com",
+    address: "Av. Brigadeiro Faria Lima, 2100 - Itaim Bibi, SP",
+    cpf: "099.112.443-55",
+    registeredAt: "15/06/2025",
+    totalSpent: 450.00,
+    ordersCount: 5,
+    lastOrder: "Ontem, 20:15",
+    lastReservation: "Hoje, 20:30 - Mesa 03 (4 pessoas)",
+    notes: "Alérgico a frutos do mar.",
+    tier: "Frequente",
+    ordersHistory: [
+      { id: "#1039", date: "Ontem, 20:15", items: "1x Pizza Margherita (G)", value: 74.00, status: "Entregue" }
+    ],
+    reservationsHistory: [
+      { id: "res-003", date: "Hoje", time: "20:30", table: "Mesa 03", people: 4, status: "Confirmada" }
+    ]
+  },
+  {
+    id: "cust-6",
+    name: "Juliana Silveira",
+    phone: "(11) 97601-3392",
+    email: "juliana.silveira@design.com",
+    address: "Rua Fradique Coutinho, 312 - Vila Madalena, SP",
+    cpf: "288.771.602-99",
+    registeredAt: "01/08/2025",
+    totalSpent: 312.00,
+    ordersCount: 4,
+    lastOrder: "22/09/2026",
+    lastReservation: "-",
+    notes: "Prefere massas integrais ou sem glúten quando disponível.",
+    tier: "Regular",
+    ordersHistory: [
+      { id: "#1022", date: "22/09/2026", items: "1x Burrata al Pesto, 1x Suco Natural", value: 68.00, status: "Entregue" }
+    ],
+    reservationsHistory: []
+  }
+];
+
+// ==========================================
+// MÓDULO WHATSAPP IA & ATENDIMENTO
+// ==========================================
+
+export const initialConversations = [
+  {
+    id: "conv-1",
+    clientName: "Carlos Eduardo Mendes",
+    phone: "(11) 98142-9901",
+    status: "IA Respondendo", // 'IA Respondendo' | 'Aguardando Atendente' | 'Concluído'
+    lastMessage: "O motoboy Lucas já está na Rua Mourato Coelho a caminho.",
+    time: "20:54",
+    unreadCount: 0,
+    hasDraftOrder: false,
+    messages: [
+      { id: 1, sender: "client", text: "Boa noite! Gostaria de saber como está meu pedido #1049?", time: "20:51" },
+      { id: 2, sender: "ai", text: "Buona sera, Carlos! 🍕 Sou a Bella da Forneria Bella Napoli. Seu pedido #1049 (1x Quatro Queijos + 1x Guaraná 2L) acabou de sair do forno e foi despachado com nosso motoboy Lucas!", time: "20:52" },
+      { id: 3, sender: "client", text: "Excelente! Qual o tempo estimado de chegada?", time: "20:53" },
+      { id: 4, sender: "ai", text: "O tempo estimado é de 18 a 22 minutos. Você pode acompanhar a rota no nosso link de rastreamento: bellanapoli.com.br/rastrear/PED-1049 🛵", time: "20:54" }
+    ]
+  },
+  {
+    id: "conv-2",
+    clientName: "Mariana Souza",
+    phone: "(11) 98452-1920",
+    status: "IA Respondendo",
+    lastMessage: "Perfeito! A Margherita já está no forno a lenha.",
+    time: "20:43",
+    unreadCount: 0,
+    hasDraftOrder: true,
+    draftOrder: {
+      items: "1x Pizza Margherita Especial (G), 1x Coca-Cola 2L",
+      total: 94.00,
+      payment: "Pix",
+      address: "Rua das Palmeiras, 142 - Apto 32"
+    },
+    messages: [
+      { id: 1, sender: "client", text: "Olá, gostaria de pedir uma pizza grande de Margherita com massa bem crocante e uma Coca 2L no Pix por favor.", time: "20:40" },
+      { id: 2, sender: "ai", text: "Olá Mariana! Que ótima escolha! Já anotei o seu pedido: 1x Pizza Margherita Especial (G) com massa fina crocante + 1x Coca-Cola 2L. Valor total: R$ 94,00. Confirma para entrega no seu endereço Rua das Palmeiras, 142?", time: "20:41" },
+      { id: 3, sender: "client", text: "Isso mesmo, confirmado!", time: "20:42" },
+      { id: 4, sender: "ai", text: "Pedido confirmado com sucesso (#1048)! Já geramos a chave Pix e enviamos para a nossa cozinha. Previsão de 35 a 45 min!", time: "20:43" }
+    ]
+  },
+  {
+    id: "conv-3",
+    clientName: "Fernanda Alencar",
+    phone: "(11) 97711-2290",
+    status: "Aguardando Atendente",
+    lastMessage: "Gostaria de fechar o Espaço Festa para 35 pessoas no sábado.",
+    time: "20:20",
+    unreadCount: 1,
+    hasDraftOrder: false,
+    messages: [
+      { id: 1, sender: "client", text: "Boa noite! Vocês têm reserva para 35 pessoas no Espaço Festa para o próximo sábado às 19:30?", time: "20:18" },
+      { id: 2, sender: "ai", text: "Buona sera, Fernanda! Nosso Espaço Festa comporta até 40 pessoas com buffet de pizzas napolitanas. Vou encaminhar você agora para nosso gerente Carlos para confirmar os detalhes do menu exclusivo!", time: "20:19" },
+      { id: 3, sender: "client", text: "Ótimo, fico no aguardo dele!", time: "20:20" }
+    ]
+  },
+  {
+    id: "conv-4",
+    clientName: "Bruno Castanho",
+    phone: "(11) 98664-5501",
+    status: "Concluído",
+    lastMessage: "Muito obrigado, a pizza estava divina!",
+    time: "19:45",
+    unreadCount: 0,
+    hasDraftOrder: false,
+    messages: [
+      { id: 1, sender: "client", text: "Boa noite, o entregador acabou de chegar!", time: "19:25" },
+      { id: 2, sender: "ai", text: "Que maravilha, Bruno! Tenha um excelente jantar! Depois nos conte o que achou da nossa massa de fermentação 48h! 🍕", time: "19:26" },
+      { id: 3, sender: "client", text: "Muito obrigado, a pizza estava divina!", time: "19:45" }
+    ]
+  }
+];
+
+export const initialAIConfig = {
+  name: "Bella",
+  role: "Atendente Virtual Especialista em Pizzas Napolitanas",
+  tone: "Amigável, acolhedor e ágil (estilo trattoria italiana moderna)",
+  establishmentName: "Bella Napoli Forneria",
+  hours: "Terça a Domingo das 18:00 às 23:45",
+  address: "Rua Harmonia, 412 - Pinheiros, São Paulo - SP",
+  maxDeliveryRadiusKm: 8,
+  averagePrepTime: "25 a 35 minutos",
+  systemPrompt: `Você é a "Bella", assistente de inteligência artificial da pizzaria Bella Napoli Forneria.
+Suas diretrizes:
+1. Cumprimente os clientes com calor e simpatia italiana ("Buona sera!", "Ciao!").
+2. Oriente os clientes quanto ao cardápio de pizzas artesanais, opções vegetarianas e harmonização com vinhos Chianti.
+3. Colete dados de entrega (endereço com número e complemento) e forma de pagamento (Pix, Cartão, Dinheiro).
+4. Para reservas acima de 15 pessoas ou espaço de eventos, faça a triagem e transfira para o gerente humano Carlos.
+5. Sempre confirme o pedido repetindo os itens, valores e tempo estimado antes de finalizar.`,
+  activeRules: [
+    "Respostas automáticas em até 3 segundos",
+    "Geração de pedido rascunho com cálculo automático de frete",
+    "Envio automático de chave Pix copia-e-cola",
+    "Transbordo para atendente humano quando cliente solicitar ou para eventos grandes"
+  ]
+};
+
+export const initialAutomations = [
+  {
+    id: "auto-1",
+    name: "Boas-vindas para Novos Clientes",
+    description: "Envia saudação e cardápio digital quando cliente manda a primeira mensagem.",
+    status: "Ativo",
+    trigger: "Primeiro contato no WhatsApp",
+    schedule: "Imediato",
+    message: "Ciao! 🍕 Seja muito bem-vindo à Bella Napoli Forneria! Eu sou a Bella, sua assistente virtual. Como posso te atender hoje? Você pode pedir delivery, consultar o cardápio ou reservar uma mesa."
+  },
+  {
+    id: "auto-2",
+    name: "Confirmação de Pedido com Chave Pix",
+    description: "Dispara resumo do pedido, valor e código Pix assim que o pedido é registrado.",
+    status: "Ativo",
+    trigger: "Novo pedido registrado",
+    schedule: "Imediato pós-pedido",
+    message: "Oba, {cliente}! Seu pedido {pedido} foi recebido com sucesso pela nossa cozinha. Valor total: {valor}. Segue o Pix copia e cola abaixo para pagamento instantâneo."
+  },
+  {
+    id: "auto-3",
+    name: "Confirmação de Reserva de Mesa",
+    description: "Notifica data, horário e mesa reservada no salão ou espaço de eventos.",
+    status: "Ativo",
+    trigger: "Reserva confirmada no sistema",
+    schedule: "Imediato pós-reserva",
+    message: "Sua mesa está garantida na Bella Napoli! 🍷 Data: {data}, às {horario} para {pessoas} pessoas. Guardaremos sua mesa por até 15 minutos de tolerância. Até logo!"
+  },
+  {
+    id: "auto-4",
+    name: "Pedido Saiu para Entrega",
+    description: "Alerta cliente com link de rastreamento no momento em que o motoboy retira a bag.",
+    status: "Ativo",
+    trigger: "Status alterado para 'Em rota'",
+    schedule: "No despacho do motoboy",
+    message: "Seu pedido {pedido} acabou de sair do forno e já está a caminho com o nosso motoboy {motoboy}! Acompanhe a entrega ao vivo: {link_rastreamento} 🛵"
+  },
+  {
+    id: "auto-5",
+    name: "Pesquisa de Satisfação Pós-Entrega",
+    description: "Pergunta a avaliação do cliente 45 minutos após a confirmação de entrega.",
+    status: "Ativo",
+    trigger: "45 minutos após 'Entregue'",
+    schedule: "Automático",
+    message: "Esperamos que sua pizza tenha chegado quentinha e deliciosa! 🍕 Numa escala de 1 a 5 estrelas, qual nota você dá para a nossa forneria hoje?"
+  },
+  {
+    id: "auto-6",
+    name: "Disparo Promocional Semanal",
+    description: "Campanha periódica de novidades e vinhos com frete grátis nas quintas-feiras.",
+    status: "Ativo",
+    trigger: "Agendamento semanal",
+    schedule: "Toda Quinta-feira às 17:30",
+    message: "Quinta da Forneria! 🍕 Peça hoje qualquer pizza especial e ganhe 50% de desconto na segunda unidade ou uma taça de vinho Chianti de cortesia! Peça agora respondendo esta mensagem."
+  }
+];
+
+export const initialWeeklyCampaign = {
+  name: "Quinta Napolitana - Dobradinha Especial",
+  message: "Buona sera! A nossa lenha já está estalando! 🍕 Hoje na compra de qualquer pizza Speciale você ganha frete grátis e sobremesa grátis para pedidos até as 21h. Peça pelo cardápio digital ou responda EU QUERO!",
+  dayOfWeek: "Quinta-feira",
+  time: "17:30",
+  audience: "Todos os clientes ativos (últimos 60 dias)",
+  status: "Ativo",
+  estimatedRecipients: 418
+};
+
+// ==========================================
+// MÓDULO CONFIGURAÇÕES & USUÁRIOS
+// ==========================================
+
+export const initialSystemUsers = [
+  {
+    id: "usr-1",
+    name: "Carlos Silva",
+    email: "carlos.silva@bellanapoli.com.br",
+    role: "Administrador",
+    status: "Ativo",
+    lastLogin: "Hoje, 18:02",
+    allowedModules: ["dashboard", "pedidos", "reservas", "mesas", "entregas", "entregadores", "produtos", "estoque", "compras", "clientes", "whatsapp_ia", "financeiro", "relatorios", "configuracoes"]
+  },
+  {
+    id: "usr-2",
+    name: "Giovanni Bianchi",
+    email: "chef.giovanni@bellanapoli.com.br",
+    role: "Gerente",
+    status: "Ativo",
+    lastLogin: "Hoje, 17:15",
+    allowedModules: ["dashboard", "pedidos", "reservas", "mesas", "produtos", "estoque", "compras", "relatorios"]
+  },
+  {
+    id: "usr-3",
+    name: "Juliana Santos",
+    email: "juliana.atendimento@bellanapoli.com.br",
+    role: "Atendente",
+    status: "Ativo",
+    lastLogin: "Hoje, 18:20",
+    allowedModules: ["dashboard", "pedidos", "reservas", "mesas", "clientes", "whatsapp_ia"]
+  },
+  {
+    id: "usr-4",
+    name: "Marcos Almoxarife",
+    email: "marcos.estoque@bellanapoli.com.br",
+    role: "Estoque",
+    status: "Ativo",
+    lastLogin: "Hoje, 15:40",
+    allowedModules: ["produtos", "estoque", "compras"]
+  },
+  {
+    id: "usr-5",
+    name: "Lucas Motoboy",
+    email: "lucas.entrega@bellanapoli.com.br",
+    role: "Entregador",
+    status: "Ativo",
+    lastLogin: "Hoje, 18:45",
+    allowedModules: ["entregas"]
+  }
+];
+
+
