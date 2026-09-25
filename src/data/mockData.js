@@ -1277,3 +1277,234 @@ export const initialStockMovements = [
   }
 ];
 
+// ==========================================
+// MÓDULO FINANCEIRO E RELATÓRIOS
+// ==========================================
+
+export const initialFinancialEntries = [
+  {
+    id: "fin-1",
+    date: "25/09/2026 20:52",
+    description: "Pedido #1049 - Carlos Eduardo (Delivery)",
+    category: "Venda Delivery",
+    type: "Receita",
+    value: 94.00,
+    paymentMethod: "Pix",
+    status: "Confirmado",
+    note: "1x Pizza Quatro Queijos, 1x Guaraná 2L"
+  },
+  {
+    id: "fin-2",
+    date: "25/09/2026 20:41",
+    description: "Pedido #1048 - Mariana Souza (Delivery)",
+    category: "Venda Delivery",
+    type: "Receita",
+    value: 94.00,
+    paymentMethod: "Pix",
+    status: "Confirmado",
+    note: "1x Pizza Margherita, 1x Coca 2L"
+  },
+  {
+    id: "fin-3",
+    date: "25/09/2026 20:30",
+    description: "Mesa 08 - Conta Fechada (Salão)",
+    category: "Venda Salão",
+    type: "Receita",
+    value: 210.00,
+    paymentMethod: "Cartão de Crédito",
+    status: "Confirmado",
+    note: "2x Pizzas Especiais, 1x Vinho Chianti"
+  },
+  {
+    id: "fin-4",
+    date: "25/09/2026 19:15",
+    description: "NF #88392 - Laticínios Serra (Queijo Mussarela)",
+    category: "Insumos / Cozinha",
+    type: "Despesa",
+    value: 770.00,
+    paymentMethod: "Boleto Bancário",
+    status: "Confirmado",
+    note: "20 kg Mussarela Fior di Latte fresca"
+  },
+  {
+    id: "fin-5",
+    date: "25/09/2026 18:40",
+    description: "Mesa 01 - Consumo Salão",
+    category: "Venda Salão",
+    type: "Receita",
+    value: 164.00,
+    paymentMethod: "Cartão de Débito",
+    status: "Confirmado",
+    note: "Família Costa - 2x Pizzas Tradicionais"
+  },
+  {
+    id: "fin-6",
+    date: "25/09/2026 17:30",
+    description: "Compra Emergencial Embalagens Térmicas G",
+    category: "Embalagens",
+    type: "Despesa",
+    value: 182.75,
+    paymentMethod: "Pix",
+    status: "Confirmado",
+    note: "85 caixas oitavadas para delivery"
+  },
+  {
+    id: "fin-7",
+    date: "25/09/2026 16:00",
+    description: "Diária Motoboy Deslocamento Extra - Lucas",
+    category: "Logística / Entregas",
+    type: "Despesa",
+    value: 120.00,
+    paymentMethod: "Pix",
+    status: "Confirmado",
+    note: "Adiantamento de diária e taxa por entrega"
+  },
+  {
+    id: "fin-8",
+    date: "25/09/2026 14:20",
+    description: "Recarga Botijões de Gás Industrial P-45",
+    category: "Serviços & Utilidades",
+    type: "Despesa",
+    value: 380.00,
+    paymentMethod: "Transferência",
+    status: "Confirmado",
+    note: "Fornecimento Ultragaz para forno auxiliar"
+  },
+  {
+    id: "fin-9",
+    date: "24/09/2026 21:50",
+    description: "Vendas Delivery Noturnas (Lote Pix/Cartão)",
+    category: "Venda Delivery",
+    type: "Receita",
+    value: 3120.00,
+    paymentMethod: "Pix",
+    status: "Confirmado",
+    note: "Fechamento de caixa delivery dia anterior"
+  },
+  {
+    id: "fin-10",
+    date: "24/09/2026 15:00",
+    description: "Fornecimento Hortifruti & Manjericão Genovês",
+    category: "Insumos / Cozinha",
+    type: "Despesa",
+    value: 290.00,
+    paymentMethod: "Pix",
+    status: "Confirmado",
+    note: "Tomates confitados, rúcula e ervas frescas"
+  }
+];
+
+export const financialPeriodsData = {
+  hoje: {
+    label: "Hoje (25 de Setembro)",
+    revenue: 3970.00,
+    costs: 1240.00,
+    expenses: 480.00,
+    grossProfit: 2730.00,
+    netProfit: 2250.00,
+    ordersCount: 48,
+    avgTicket: 82.70,
+    deliveriesCount: 32,
+    deliveriesCompleted: 31,
+    avgDeliveryTime: "24 min",
+    timeline: [
+      { label: "18:00", revenue: 320, orders: 4, deliveries: 2 },
+      { label: "19:00", revenue: 765, orders: 9, deliveries: 6 },
+      { label: "20:00", revenue: 1520, orders: 18, deliveries: 13 },
+      { label: "21:00", revenue: 985, orders: 12, deliveries: 8 },
+      { label: "22:00", revenue: 380, orders: 5, deliveries: 3 }
+    ]
+  },
+  "7dias": {
+    label: "Últimos 7 dias",
+    revenue: 28450.00,
+    costs: 9120.00,
+    expenses: 4200.00,
+    grossProfit: 19330.00,
+    netProfit: 15130.00,
+    ordersCount: 342,
+    avgTicket: 83.18,
+    deliveriesCount: 228,
+    deliveriesCompleted: 224,
+    avgDeliveryTime: "26 min",
+    timeline: [
+      { label: "Sex", revenue: 4200, orders: 51, deliveries: 34 },
+      { label: "Sáb", revenue: 5850, orders: 68, deliveries: 46 },
+      { label: "Dom", revenue: 5120, orders: 62, deliveries: 41 },
+      { label: "Seg", revenue: 1950, orders: 25, deliveries: 16 },
+      { label: "Ter", revenue: 3400, orders: 42, deliveries: 28 },
+      { label: "Qua", revenue: 3960, orders: 46, deliveries: 31 },
+      { label: "Qui (Hoje)", revenue: 3970, orders: 48, deliveries: 32 }
+    ]
+  },
+  "30dias": {
+    label: "Últimos 30 dias",
+    revenue: 114800.00,
+    costs: 37200.00,
+    expenses: 18400.00,
+    grossProfit: 77600.00,
+    netProfit: 59200.00,
+    ordersCount: 1390,
+    avgTicket: 82.59,
+    deliveriesCount: 924,
+    deliveriesCompleted: 912,
+    avgDeliveryTime: "25 min",
+    timeline: [
+      { label: "Semana 1", revenue: 26800, orders: 325, deliveries: 215 },
+      { label: "Semana 2", revenue: 29400, orders: 358, deliveries: 238 },
+      { label: "Semana 3", revenue: 30150, orders: 365, deliveries: 243 },
+      { label: "Semana 4", revenue: 28450, orders: 342, deliveries: 228 }
+    ]
+  },
+  mesAtual: {
+    label: "Mês Atual (Setembro)",
+    revenue: 96350.00,
+    costs: 31100.00,
+    expenses: 15200.00,
+    grossProfit: 65250.00,
+    netProfit: 50050.00,
+    ordersCount: 1165,
+    avgTicket: 82.70,
+    deliveriesCount: 774,
+    deliveriesCompleted: 762,
+    avgDeliveryTime: "25 min",
+    timeline: [
+      { label: "01 a 07", revenue: 24500, orders: 295, deliveries: 196 },
+      { label: "08 a 14", revenue: 25800, orders: 312, deliveries: 208 },
+      { label: "15 a 21", revenue: 26600, orders: 322, deliveries: 214 },
+      { label: "22 a 25", revenue: 19450, orders: 236, deliveries: 156 }
+    ]
+  },
+  personalizado: {
+    label: "Período Personalizado",
+    revenue: 42100.00,
+    costs: 13600.00,
+    expenses: 6100.00,
+    grossProfit: 28500.00,
+    netProfit: 22400.00,
+    ordersCount: 510,
+    avgTicket: 82.54,
+    deliveriesCount: 338,
+    deliveriesCompleted: 332,
+    avgDeliveryTime: "25 min",
+    timeline: [
+      { label: "Dia 1", revenue: 5400, orders: 65, deliveries: 43 },
+      { label: "Dia 2", revenue: 6100, orders: 74, deliveries: 49 },
+      { label: "Dia 3", revenue: 5800, orders: 70, deliveries: 46 },
+      { label: "Dia 4", revenue: 6400, orders: 78, deliveries: 52 },
+      { label: "Dia 5", revenue: 6200, orders: 75, deliveries: 50 },
+      { label: "Dia 6", revenue: 6050, orders: 73, deliveries: 48 },
+      { label: "Dia 7", revenue: 6150, orders: 75, deliveries: 50 }
+    ]
+  }
+};
+
+export const topSellingProducts = [
+  { rank: 1, name: "Pizza Margherita Especial", category: "Pizzas Especiais", qty: 142, revenue: 10508.00, margin: "68%" },
+  { rank: 2, name: "Pizza Quatro Queijos Suprema", category: "Pizzas Tradicionais", qty: 118, revenue: 9322.00, margin: "67%" },
+  { rank: 3, name: "Pizza Pepperoni Supreme", category: "Pizzas Tradicionais", qty: 96, revenue: 7488.00, margin: "68%" },
+  { rank: 4, name: "Pizza Calabresa Artesanal", category: "Pizzas Tradicionais", qty: 84, revenue: 5712.00, margin: "71%" },
+  { rank: 5, name: "Vinho Chianti Ruffino DOCG", category: "Bebidas & Vinhos", qty: 45, revenue: 6075.00, margin: "50%" },
+  { rank: 6, name: "Coca-Cola 2 Litros", category: "Bebidas & Vinhos", qty: 132, revenue: 2112.00, margin: "56%" }
+];
+
