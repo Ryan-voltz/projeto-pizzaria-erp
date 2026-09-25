@@ -188,7 +188,7 @@ export default function UsersPermissionsTab() {
             Matriz de Controle de Permissões por Cargo
           </h3>
           <p className="text-[11px] text-slate-500">
-            Define a governança de acesso aos 14 módulos do ERP Bella Napoli
+            Define a governança de acesso aos 14 módulos do ERP Chef Deni
           </p>
         </div>
 
@@ -245,7 +245,7 @@ export default function UsersPermissionsTab() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="usuario@bellanapoli.com.br"
+                  placeholder="usuario@chefdeni.com.br"
                   className="w-full px-3 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-lg focus:outline-hidden focus:ring-1 focus:ring-emerald-600"
                 />
               </div>

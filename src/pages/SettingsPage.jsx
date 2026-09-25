@@ -16,7 +16,7 @@ export default function SettingsPage() {
   ];
 
   return (
-    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto space-y-6">
+    <div className="space-y-5">
       {/* Top Header */}
       <div className="space-y-4">
         <div>

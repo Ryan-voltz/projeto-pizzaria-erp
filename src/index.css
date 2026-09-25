@@ -4,8 +4,19 @@
 
 @layer base {
   body {
-    @apply bg-[#F8FAFC] text-slate-900;
+    @apply bg-[#F8FAFC] text-slate-900 antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  button {
+    @apply select-none;
+  }
+}
+
+@layer utilities {
+  /* Subtle interaction feedback */
+  .btn-press {
+    @apply active:scale-[0.98] transition-transform duration-100;
   }
 }
 

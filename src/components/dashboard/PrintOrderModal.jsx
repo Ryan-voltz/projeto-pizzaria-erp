@@ -122,7 +122,7 @@ export default function PrintOrderModal({
             </div>
 
             <div className="text-center pt-2 text-[9px] text-slate-400 border-t border-dashed border-slate-200">
-              Gerado pelo Bella Napoli ERP • Automação WhatsApp IA
+              Gerado pelo Chef Deni ERP • Automação WhatsApp IA
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 export const establishment = {
-  name: "Bella Napoli Forneria",
-  tagline: "Gestão Operacional & Forno a Lenha",
+  name: "Chef Deni Pizzaria e Restaurante",
+  tagline: "Pizzaria & Restaurante • Forno a Lenha",
   status: "Aberta",
   currentShift: "Noite (18:00 - 23:45)",
   cnpj: "48.291.034/0001-92",
@@ -13,7 +13,7 @@ export const establishment = {
 export const currentUser = {
   name: "Carlos Silva",
   role: "Gerente Geral",
-  email: "carlos.silva@bellanapoli.com.br",
+  email: "carlos.silva@chefdeni.com.br",
   initials: "CS",
   avatarUrl: null
 };
@@ -1658,9 +1658,9 @@ export const initialConversations = [
     hasDraftOrder: false,
     messages: [
       { id: 1, sender: "client", text: "Boa noite! Gostaria de saber como está meu pedido #1049?", time: "20:51" },
-      { id: 2, sender: "ai", text: "Buona sera, Carlos! 🍕 Sou a Bella da Forneria Bella Napoli. Seu pedido #1049 (1x Quatro Queijos + 1x Guaraná 2L) acabou de sair do forno e foi despachado com nosso motoboy Lucas!", time: "20:52" },
+      { id: 2, sender: "ai", text: "Buona sera, Carlos! 🍕 Sou a Bella da Chef Deni Pizzaria e Restaurante. Seu pedido #1049 (1x Quatro Queijos + 1x Guaraná 2L) acabou de sair do forno e foi despachado com nosso motoboy Lucas!", time: "20:52" },
       { id: 3, sender: "client", text: "Excelente! Qual o tempo estimado de chegada?", time: "20:53" },
-      { id: 4, sender: "ai", text: "O tempo estimado é de 18 a 22 minutos. Você pode acompanhar a rota no nosso link de rastreamento: bellanapoli.com.br/rastrear/PED-1049 🛵", time: "20:54" }
+      { id: 4, sender: "ai", text: "O tempo estimado é de 18 a 22 minutos. Você pode acompanhar a rota no nosso link de rastreamento: chefdeni.com.br/rastrear/PED-1049 🛵", time: "20:54" }
     ]
   },
   {
@@ -1719,17 +1719,17 @@ export const initialConversations = [
 
 export const initialAIConfig = {
   name: "Bella",
-  role: "Atendente Virtual Especialista em Pizzas Napolitanas",
-  tone: "Amigável, acolhedor e ágil (estilo trattoria italiana moderna)",
-  establishmentName: "Bella Napoli Forneria",
+  role: "Atendente Virtual Especialista em Pizzas & Pratos",
+  tone: "Amigável, acolhedor e ágil (estilo trattoria moderna)",
+  establishmentName: "Chef Deni Pizzaria e Restaurante",
   hours: "Terça a Domingo das 18:00 às 23:45",
   address: "Rua Harmonia, 412 - Pinheiros, São Paulo - SP",
   maxDeliveryRadiusKm: 8,
   averagePrepTime: "25 a 35 minutos",
-  systemPrompt: `Você é a "Bella", assistente de inteligência artificial da pizzaria Bella Napoli Forneria.
+  systemPrompt: `Você é a "Bella", assistente de inteligência artificial da Chef Deni Pizzaria e Restaurante.
 Suas diretrizes:
-1. Cumprimente os clientes com calor e simpatia italiana ("Buona sera!", "Ciao!").
-2. Oriente os clientes quanto ao cardápio de pizzas artesanais, opções vegetarianas e harmonização com vinhos Chianti.
+1. Cumprimente os clientes com calor e simpatia ("Boa noite! Seja bem-vindo à Chef Deni!").
+2. Oriente os clientes quanto ao cardápio de pizzas artesanais, opções do restaurante e bebidas.
 3. Colete dados de entrega (endereço com número e complemento) e forma de pagamento (Pix, Cartão, Dinheiro).
 4. Para reservas acima de 15 pessoas ou espaço de eventos, faça a triagem e transfira para o gerente humano Carlos.
 5. Sempre confirme o pedido repetindo os itens, valores e tempo estimado antes de finalizar.`,
@@ -1749,7 +1749,7 @@ export const initialAutomations = [
     status: "Ativo",
     trigger: "Primeiro contato no WhatsApp",
     schedule: "Imediato",
-    message: "Ciao! 🍕 Seja muito bem-vindo à Bella Napoli Forneria! Eu sou a Bella, sua assistente virtual. Como posso te atender hoje? Você pode pedir delivery, consultar o cardápio ou reservar uma mesa."
+    message: "Ciao! 🍕 Seja muito bem-vindo à Chef Deni Pizzaria e Restaurante! Eu sou a Bella, sua assistente virtual. Como posso te atender hoje? Você pode pedir delivery, consultar o cardápio ou reservar uma mesa."
   },
   {
     id: "auto-2",
@@ -1767,7 +1767,7 @@ export const initialAutomations = [
     status: "Ativo",
     trigger: "Reserva confirmada no sistema",
     schedule: "Imediato pós-reserva",
-    message: "Sua mesa está garantida na Bella Napoli! 🍷 Data: {data}, às {horario} para {pessoas} pessoas. Guardaremos sua mesa por até 15 minutos de tolerância. Até logo!"
+    message: "Sua mesa está garantida na Chef Deni Pizzaria e Restaurante! 🍷 Data: {data}, às {horario} para {pessoas} pessoas. Guardaremos sua mesa por até 15 minutos de tolerância. Até logo!"
   },
   {
     id: "auto-4",
@@ -1816,7 +1816,7 @@ export const initialSystemUsers = [
   {
     id: "usr-1",
     name: "Carlos Silva",
-    email: "carlos.silva@bellanapoli.com.br",
+    email: "carlos.silva@chefdeni.com.br",
     role: "Administrador",
     status: "Ativo",
     lastLogin: "Hoje, 18:02",
@@ -1825,7 +1825,7 @@ export const initialSystemUsers = [
   {
     id: "usr-2",
     name: "Giovanni Bianchi",
-    email: "chef.giovanni@bellanapoli.com.br",
+    email: "chef.giovanni@chefdeni.com.br",
     role: "Gerente",
     status: "Ativo",
     lastLogin: "Hoje, 17:15",
@@ -1834,7 +1834,7 @@ export const initialSystemUsers = [
   {
     id: "usr-3",
     name: "Juliana Santos",
-    email: "juliana.atendimento@bellanapoli.com.br",
+    email: "juliana.atendimento@chefdeni.com.br",
     role: "Atendente",
     status: "Ativo",
     lastLogin: "Hoje, 18:20",
@@ -1843,7 +1843,7 @@ export const initialSystemUsers = [
   {
     id: "usr-4",
     name: "Marcos Almoxarife",
-    email: "marcos.estoque@bellanapoli.com.br",
+    email: "marcos.estoque@chefdeni.com.br",
     role: "Estoque",
     status: "Ativo",
     lastLogin: "Hoje, 15:40",
@@ -1852,7 +1852,7 @@ export const initialSystemUsers = [
   {
     id: "usr-5",
     name: "Lucas Motoboy",
-    email: "lucas.entrega@bellanapoli.com.br",
+    email: "lucas.entrega@chefdeni.com.br",
     role: "Entregador",
     status: "Ativo",
     lastLogin: "Hoje, 18:45",

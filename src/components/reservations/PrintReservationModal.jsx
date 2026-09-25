@@ -114,7 +114,7 @@ export default function PrintReservationModal({
             </div>
 
             <div className="text-center pt-2 text-[9px] text-slate-400 border-t border-dashed border-slate-200">
-              Gerado automaticamente pelo Bella Napoli ERP
+              Gerado automaticamente pelo Chef Deni ERP
             </div>
           </div>
         </div>

@@ -61,18 +61,23 @@ export default function Sidebar({
         }`}
       >
         {/* Top Logo / Establishment */}
-        <div className="flex items-center justify-between h-16 px-4 border-b border-slate-100">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-emerald-700 text-white shadow-xs shrink-0">
+        <div className="flex items-center justify-between h-18 px-4 border-b border-slate-100 bg-slate-50/30">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-700 to-emerald-800 text-white shadow-xs shrink-0 ring-2 ring-emerald-600/10">
               <Pizza className="w-5 h-5" />
             </div>
             <div className="min-w-0">
-              <h1 className="text-sm font-semibold tracking-tight text-slate-900 truncate">
-                {establishment.name}
-              </h1>
-              <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[11px] font-medium text-emerald-700">Aberta • Noite</span>
+              <div className="flex items-center gap-1.5">
+                <h1 className="text-sm font-black tracking-tight text-slate-900 truncate">
+                  Chef Deni
+                </h1>
+              </div>
+              <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-wider block truncate">
+                Pizzaria e Restaurante
+              </span>
+              <div className="flex items-center gap-1 mt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[10px] font-medium text-emerald-700">Aberta • Noite</span>
               </div>
             </div>
           </div>
