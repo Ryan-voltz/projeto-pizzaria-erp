@@ -4,6 +4,8 @@ import DashboardPage from './pages/DashboardPage';
 import OrdersPage from './pages/OrdersPage';
 import ReservationsPage from './pages/ReservationsPage';
 import TablesPage from './pages/TablesPage';
+import DeliveriesPage from './pages/DeliveriesPage';
+import CouriersPage from './pages/CouriersPage';
 import ModuleView from './pages/ModuleView';
 import PrintOrderModal from './components/dashboard/PrintOrderModal';
 import { initialOrders, initialAlerts } from './data/mockData';
@@ -31,6 +33,10 @@ export default function App() {
         <ReservationsPage />
       ) : activeNav === 'mesas' ? (
         <TablesPage />
+      ) : activeNav === 'entregas' ? (
+        <DeliveriesPage />
+      ) : activeNav === 'entregadores' ? (
+        <CouriersPage />
       ) : (
         <ModuleView
           moduleId={activeNav}

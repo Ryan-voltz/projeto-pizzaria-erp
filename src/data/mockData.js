@@ -5,7 +5,9 @@ export const establishment = {
   currentShift: "Noite (18:00 - 23:45)",
   cnpj: "48.291.034/0001-92",
   address: "Rua Harmonia, 412 - Pinheiros, SP",
-  phone: "(11) 3042-9900"
+  phone: "(11) 3042-9900",
+  lat: -23.5558,
+  lng: -46.6902
 };
 
 export const currentUser = {
@@ -16,11 +18,212 @@ export const currentUser = {
   avatarUrl: null
 };
 
-export const couriersList = [
-  { id: "cour-1", name: "Lucas Motoboy", vehicle: "Honda CG 160 Fan (Placa EKS-4819)", phone: "(11) 98112-4401", status: "Em trânsito" },
-  { id: "cour-2", name: "Marcos Entrega", vehicle: "Yamaha Factor 150 (Placa DFL-9201)", phone: "(11) 97720-3392", status: "Disponível" },
-  { id: "cour-3", name: "Gabriel Souza", vehicle: "Honda Biz 125 (Placa GHI-1042)", phone: "(11) 99104-5582", status: "Disponível" },
-  { id: "cour-4", name: "Renato Dias", vehicle: "Honda Bros 160 (Placa RTO-8831)", phone: "(11) 98402-9918", status: "Em trânsito" }
+// Entregadores detalhados para a página "Entregadores"
+export const initialCouriers = [
+  {
+    id: "cour-1",
+    name: "Lucas Motoboy",
+    phone: "(11) 98112-4401",
+    status: "Em entrega", // Offline, Disponível, Em entrega
+    vehicle: "Honda CG 160 Fan",
+    plate: "EKS-4819",
+    completedToday: 9,
+    activeDeliveries: 1,
+    lastActive: "Há 4 min",
+    rating: "4.9",
+    initials: "LM"
+  },
+  {
+    id: "cour-2",
+    name: "Marcos Entrega",
+    phone: "(11) 97720-3392",
+    status: "Disponível",
+    vehicle: "Yamaha Factor 150",
+    plate: "DFL-9201",
+    completedToday: 7,
+    activeDeliveries: 0,
+    lastActive: "Há 12 min",
+    rating: "4.8",
+    initials: "ME"
+  },
+  {
+    id: "cour-3",
+    name: "Gabriel Souza",
+    phone: "(11) 99104-5582",
+    status: "Disponível",
+    vehicle: "Honda Biz 125",
+    plate: "GHI-1042",
+    completedToday: 5,
+    activeDeliveries: 0,
+    lastActive: "Há 25 min",
+    rating: "4.9",
+    initials: "GS"
+  },
+  {
+    id: "cour-4",
+    name: "Renato Dias",
+    phone: "(11) 98402-9918",
+    status: "Em entrega",
+    vehicle: "Honda Bros 160",
+    plate: "RTO-8831",
+    completedToday: 6,
+    activeDeliveries: 1,
+    lastActive: "Há 8 min",
+    rating: "4.7",
+    initials: "RD"
+  },
+  {
+    id: "cour-5",
+    name: "Tiago Martins",
+    phone: "(11) 97003-1289",
+    status: "Offline",
+    vehicle: "Yamaha Fazer 250",
+    plate: "TMX-3310",
+    completedToday: 4,
+    activeDeliveries: 0,
+    lastActive: "Há 2 horas",
+    rating: "4.6",
+    initials: "TM"
+  }
+];
+
+export const couriersList = initialCouriers;
+
+// Entregas da noite com coordenadas de simulação de rota para o mapa
+export const initialDeliveries = [
+  {
+    id: "del-1",
+    orderId: "#1049",
+    client: "Letícia Ribeiro",
+    phone: "(11) 97412-9934",
+    address: "Rua Oscar Freire, 1020 - Cerqueira César",
+    courier: null,
+    time: "20:52",
+    dispatchedAt: null,
+    status: "Aguardando entregador", // Aguardando entregador, Entregador atribuído, Em rota, Entregue, Cancelada
+    duration: "Prev. 28 min",
+    elapsedMinutes: 4,
+    estimatedArrival: "21:20",
+    value: "R$ 94,00",
+    paymentMethod: "Pix",
+    items: "1x Pizza Quatro Queijos (G), 1x Guaraná 2L",
+    mapCoords: { x: 68, y: 35 },
+    routeProgress: 0
+  },
+  {
+    id: "del-2",
+    orderId: "#1048",
+    client: "Mariana Souza",
+    phone: "(11) 98452-1920",
+    address: "Rua das Palmeiras, 142 - Apto 32 - Santa Cecília",
+    courier: "Marcos Entrega",
+    time: "20:41",
+    dispatchedAt: "20:50",
+    status: "Entregador atribuído",
+    duration: "Prev. 22 min",
+    elapsedMinutes: 8,
+    estimatedArrival: "21:12",
+    value: "R$ 94,00",
+    paymentMethod: "Pix",
+    items: "1x Pizza Margherita Especial (G), 1x Coca-Cola 2L",
+    mapCoords: { x: 38, y: 28 },
+    routeProgress: 25
+  },
+  {
+    id: "del-3",
+    orderId: "#1046",
+    client: "Roberto Guimarães",
+    phone: "(11) 97312-8809",
+    address: "Rua Augusta, 850 - Consolação",
+    courier: "Lucas Motoboy",
+    time: "20:22",
+    dispatchedAt: "20:38",
+    status: "Em rota",
+    duration: "Em trânsito (18 min)",
+    elapsedMinutes: 18,
+    estimatedArrival: "21:02",
+    value: "R$ 78,00",
+    paymentMethod: "Dinheiro (troco p/ 100)",
+    items: "1x Pizza Pepperoni Supreme (G), 1x Guaraná 2L",
+    mapCoords: { x: 55, y: 52 },
+    routeProgress: 75
+  },
+  {
+    id: "del-4",
+    orderId: "#1050",
+    client: "Bruno Castanho",
+    phone: "(11) 98664-5501",
+    address: "Av. Rebouças, 1450 - Pinheiros",
+    courier: "Renato Dias",
+    time: "20:30",
+    dispatchedAt: "20:44",
+    status: "Em rota",
+    duration: "Em trânsito (12 min)",
+    elapsedMinutes: 12,
+    estimatedArrival: "21:06",
+    value: "R$ 112,00",
+    paymentMethod: "Cartão de Crédito",
+    items: "1x Pizza Parma com Rúcula (G), 1x Torta Holandesa",
+    mapCoords: { x: 32, y: 64 },
+    routeProgress: 60
+  },
+  {
+    id: "del-5",
+    orderId: "#1044",
+    client: "Felipe Andrade",
+    phone: "(11) 99650-7731",
+    address: "Rua Bela Cintra, 310 - Apto 81",
+    courier: "Marcos Entrega",
+    time: "19:58",
+    dispatchedAt: "20:19",
+    status: "Entregue",
+    duration: "19 min (Total)",
+    elapsedMinutes: 40,
+    estimatedArrival: "Entregue às 20:38",
+    value: "R$ 64,50",
+    paymentMethod: "Cartão de Débito",
+    items: "1x Pizza Frango com Catupiry (G)",
+    mapCoords: { x: 62, y: 70 },
+    routeProgress: 100
+  },
+  {
+    id: "del-6",
+    orderId: "#1043",
+    client: "Patrícia Viana",
+    phone: "(11) 97001-3429",
+    address: "Rua Consolação, 2100 - Conj 102",
+    courier: "Lucas Motoboy",
+    time: "19:42",
+    dispatchedAt: "20:05",
+    status: "Entregue",
+    duration: "20 min (Total)",
+    elapsedMinutes: 56,
+    estimatedArrival: "Entregue às 20:25",
+    value: "R$ 126,00",
+    paymentMethod: "Pix",
+    items: "1x Pizza Parma com Rúcula (G), 2x Torta Holandesa",
+    mapCoords: { x: 50, y: 80 },
+    routeProgress: 100
+  },
+  {
+    id: "del-7",
+    orderId: "#1041",
+    client: "Daniel Carvalho",
+    phone: "(11) 98110-3329",
+    address: "Rua Mourato Coelho, 920",
+    courier: null,
+    time: "19:15",
+    dispatchedAt: null,
+    status: "Cancelada",
+    duration: "Cancelada",
+    elapsedMinutes: 0,
+    estimatedArrival: "Cancelada pelo cliente",
+    value: "R$ 82,00",
+    paymentMethod: "Pix",
+    items: "1x Pizza Calabresa (G)",
+    mapCoords: { x: 25, y: 40 },
+    routeProgress: 0
+  }
 ];
 
 export const menuCatalog = [
@@ -38,7 +241,6 @@ export const menuCatalog = [
   { id: "p-12", name: "Torta Holandesa Artesanal (Fatia)", category: "Sobremesas", price: 15.00 }
 ];
 
-// Espaços cadastrados para reservas e eventos
 export const initialSpaces = [
   {
     id: "sp-1",
@@ -92,14 +294,13 @@ export const initialSpaces = [
   }
 ];
 
-// Mesas detalhadas do salão
 export const initialTables = [
   {
     id: "M01",
     name: "Mesa 01",
     number: 1,
     capacity: 4,
-    status: "Ocupada", // Livre, Ocupada, Reservada, Em atendimento
+    status: "Ocupada",
     location: "Salão Principal",
     currentClient: "Família Costa",
     currentBill: "R$ 164,00",
@@ -252,7 +453,6 @@ export const initialTables = [
   }
 ];
 
-// Reservas detalhadas com status: Pendente, Confirmada, Em andamento, Finalizada, Cancelada
 export const initialReservations = [
   {
     id: "res-1",
@@ -264,9 +464,9 @@ export const initialReservations = [
     people: 6,
     table: "Mesa 08",
     space: "Salão Principal",
-    type: "Aniversário", // Jantar tradicional, Aniversário, Confraternização, Casamento, Corporativo
+    type: "Aniversário",
     notes: "Comemoração de aniversário. Trazem bolo próprio.",
-    status: "Em andamento" // Pendente, Confirmada, Em andamento, Finalizada, Cancelada
+    status: "Em andamento"
   },
   {
     id: "res-2",
